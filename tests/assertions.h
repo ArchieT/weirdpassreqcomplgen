@@ -9,10 +9,10 @@
 #include "stdarg.h"
 #include "string.h"
 
-void assert_equal_int(int *nonzero, char *fstr, int a, int b) {
+void assert_equal_int(int *nonzero, int setto, char *fstr, int a, int b) {
     if (*nonzero == 0 && a != b) {
         fprintf(stderr, fstr, a, b);
-        *nonzero = 8;
+        *nonzero = setto;
     }
 }
 
