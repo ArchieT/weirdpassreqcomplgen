@@ -16,4 +16,7 @@ void assert_equal_int(int *nonzero, int setto, char *fstr, int a, int b) {
     }
 }
 
+#define ASSERT_EQUAL_INT_DECLARATIVE(nonzero, setto, a, b) \
+    assert_equal_int((nonzero), (setto), "!: " #a " :: %d ≠ %d :: " #b " :!", a,b)
+
 #endif //WEIRDPASSREQCOMPLGEN_ASSERTIONS_H
