@@ -5,5 +5,7 @@
 #include "assertions.h"
 
 int main() {
-    return ASSERT_EQUAL(1, 1);
+    int nonzero = 0;
+    assert_equal_int(&nonzero, 8, "are not equal %d %d", 1, 2);
+    return nonzero;
 }
