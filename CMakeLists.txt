@@ -3,9 +3,15 @@ project(weirdpassreqcomplgen C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(weirdpassreqcomplgen main.c randomgenerator.c randomgenerator.h)
+set(LOGARITHMS logarithms.c logarithms.h)
+
+add_executable(weirdpassreqcomplgen main.c)
 
 enable_testing()
+
+add_executable(test_log2 tests/test_log2.c ${LOGARITHMS})
+add_test(log2 test_log2)
+
 add_subdirectory(tests)
 
 add_custom_target(check ${CMAKE_COMMAND} -E env CTEST_OUTPUT_ON_FAILURE=1

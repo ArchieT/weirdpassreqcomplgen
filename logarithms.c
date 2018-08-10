@@ -1,6 +1,7 @@
 //
 // Created by mf on 10.08.18.
 //
+#include "logarithms.h"
 
 signed char log2i(unsigned char n) {
     signed char r = 0;

@@ -6,8 +6,6 @@
 #include "sys/random.h"
 #include "stdlib.h"
 
-#include "log2.c"
-
 unsigned char *genrandombytes(size_t count) {
     auto r = malloc(count);
     getrandom(r, count, 0);

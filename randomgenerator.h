@@ -6,9 +6,7 @@
 #define WEIRDPASSREQCOMPLGEN_RANDOMGENERATOR_H
 
 #include <string.h>
-
-signed char log2i(unsigned char n);
-signed char log2c(unsigned char n);
+#include "log2.h"
 
 unsigned char *genrandombytes(size_t count);
 

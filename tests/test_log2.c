@@ -3,7 +3,7 @@
 //
 
 #include "assertions.h"
-#include "../log2.c"
+#include "../logarithms.h"
 
 int main() {
     int nonzero = 0;
