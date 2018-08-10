@@ -7,3 +7,5 @@ Testing
 Makefile
 cmake_install.cmake
 weirdpassreqcomplgen.cbp
+tests/test_log2
+weirdpassreqcomplgen
