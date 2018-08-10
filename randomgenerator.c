@@ -6,7 +6,7 @@
 #include "sys/random.h"
 #include "stdlib.h"
 
-signed char log2(unsigned char n) {
+signed char log2i(unsigned char n) {
     signed char r = 0;
     while (n >>= 1) ++r;
     return r;
