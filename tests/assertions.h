@@ -9,21 +9,16 @@
 #include "stdarg.h"
 #include "string.h"
 
-void assert_equal_transitive_int(int *nonzero, char* fstr, unsigned int count, ...) {
-    va_list ap;
-    va_start(ap, count);
-    if (*nonzero==0) {
-        int i;
-        int a, b;
-        b = va_arg(ap, int);
-        for (i = 1; i < count && *nonzero==0; i++) {
-            a = b;
-            b = va_arg(ap, int);
-            if (a != b) {
-                fprintf(stderr, fstr, a, b);
-            }
-        }
-    }
+#define DEF_ASSERT_EQUAL ( ttype ) \
+void assert_equal_ ## ttype (int *nonzero, char* fstr, (ttype) a, (ttype) b) {\
+    if (*nonzero == 0 && a != b) {\
+        fprintf(stderr, fstr, a, b);\
+        *nonzero=8;\
+    }\
 }
+
+DEF_ASSERT_EQUAL(int)
+
+DEF_ASSERT_EQUAL(char)
 
 #endif //WEIRDPASSREQCOMPLGEN_ASSERTIONS_H
