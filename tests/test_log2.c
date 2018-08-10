@@ -3,7 +3,7 @@
 //
 
 #include "assertions.h"
-#include "../randomgenerator.h"
+#include "../log2.c"
 
 int main() {
     int nonzero = 0;

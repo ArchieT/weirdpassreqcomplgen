@@ -7,8 +7,8 @@
 
 #include <string.h>
 
-extern signed char log2i(unsigned char n);
-extern signed char log2c(unsigned char n);
+signed char log2i(unsigned char n);
+signed char log2c(unsigned char n);
 
 unsigned char *genrandombytes(size_t count);
 
