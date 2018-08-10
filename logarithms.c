@@ -3,13 +3,13 @@
 //
 #include "logarithms.h"
 
-signed char log2i(unsigned char n) {
+signed char log2i(unsigned long long n) {
     signed char r = 0;
     while (n >>= 1) ++r;
     return r;
 }
 
-signed char log2c(unsigned char n) {
+signed char log2c(unsigned long long n) {
     n++;
     signed char r;
     if (n != 0) {

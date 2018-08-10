@@ -5,7 +5,7 @@
 #ifndef WEIRDPASSREQCOMPLGEN_LOG2_H
 #define WEIRDPASSREQCOMPLGEN_LOG2_H
 
-signed char log2i(unsigned char n);
-signed char log2c(unsigned char n);
+signed char log2i(unsigned long long n);
+signed char log2c(unsigned long long n);
 
 #endif //WEIRDPASSREQCOMPLGEN_LOG2_H
