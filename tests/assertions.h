@@ -9,38 +9,21 @@
 #include "stdarg.h"
 #include "string.h"
 
-enum Coercion{Int, Char};
-
-void assert_equal_transitive(int *nonzero, unsigned int count, enum Coercion type, ...) {
+void assert_equal_transitive_int(int *nonzero, char* fstr, unsigned int count, ...) {
     va_list ap;
-    va_start(ap, type);
+    va_start(ap, count);
     if (*nonzero==0) {
         int i;
-#define COERCED_ASSERT_EQUAL_TRANSITIVE( the_type, fstr ) do \
-{\
-    ( the_type ) a; \
-    ( the_type ) b; \
-    b = va_arg(ap, ( the_type ));\
-    for (i = 1; i < count && *nonzero==0; i++){\
-        a = b;\
-        b = va_arg(ap, ( the_type ) );\
-        if (a != b) {\
-            fprintf(stderr, fstr, a, b);\
-            *nonzero=8;\
-        }\
-    }\
-} while(0)
-
-        switch(type){
-            case Int:
-                COERCED_ASSERT_EQUAL_TRANSITIVE(int, "%d != %d");
-                break;;
-            case Char:
-                COERCED_ASSERT_EQUAL_TRANSITIVE(char, "%d != %d");
-                break;;
+        int a, b;
+        b = va_arg(ap, int);
+        for (i = 1; i < count && *nonzero==0; i++) {
+            a = b;
+            b = va_arg(ap, int);
+            if (a != b) {
+                fprintf(stderr, fstr, a, b);
+            }
         }
     }
-    va_end(ap);
 }
 
 #endif //WEIRDPASSREQCOMPLGEN_ASSERTIONS_H
