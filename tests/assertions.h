@@ -9,14 +9,14 @@
 #include "stdarg.h"
 #include "string.h"
 
-void assert_equal_int(int *nonzero, int setto, char *fstr, int a, int b) {
+void assert_equal_int(int *nonzero, char *fstr, int a, int b) {
     if (*nonzero == 0 && a != b) {
         fprintf(stderr, fstr, a, b);
-        *nonzero = setto;
+        *nonzero = 8;
     }
 }
 
-#define ASSERT_EQUAL_INT_DECLARATIVE(nonzero, setto, a, b) \
-    assert_equal_int((nonzero), (setto), "!: " #a " :: %d ≠ %d :: " #b " :!", a,b)
+#define ASSERT_EQUAL_INT_DECLARATIVE(nonzero, a, b) \
+    assert_equal_int((nonzero), "!: " #a " :: %d ≠ %d :: " #b " :!", a,b)
 
 #endif //WEIRDPASSREQCOMPLGEN_ASSERTIONS_H

@@ -6,6 +6,6 @@
 
 int main() {
     int nonzero = 0;
-    ASSERT_EQUAL_INT_DECLARATIVE(&nonzero, 8, 1, 2);
+    ASSERT_EQUAL_INT_DECLARATIVE(&nonzero, 1, 2);
     return nonzero;
 }
